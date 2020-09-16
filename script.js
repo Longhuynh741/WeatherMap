@@ -87,7 +87,7 @@ searchBtn.on("click", function weatherData() {
     //var listBtn = $(".list-button");
     //listBtn.on("click", function () {
      //   weatherData(.value)
-    });
+
 });
 
 
