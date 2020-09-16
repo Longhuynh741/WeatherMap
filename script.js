@@ -46,17 +46,18 @@ searchBtn.on("click", function weatherData() {
       var windEl = "Wind Speed: " + data.wind.speed + "m/s";
       $("#windSpeed").text(windEl);
 
-      function getUV() {
-        var lat = data.coord.lat;
-        var lon = data.coord.lon;
+      var lat = data.coord.lat;
+      var lon = data.coord.lon;
 
-        let uvURL =
-          "https://api.openweathermap.org/data/2.5/uvi?appid=" +
-          apiKey +
-          "&lat=" +
-          lat +
-          "&lon=" +
-          lon;
+      let uvURL =
+        "https://api.openweathermap.org/data/2.5/uvi?appid=" +
+        apiKey +
+        "&lat=" +
+        lat +
+        "&lon=" +
+            lon;
+        
+      function getUV() {
 
         $.ajax({
           url: uvURL,
