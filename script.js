@@ -42,7 +42,7 @@ searchBtn.on("click", function weatherData() {
         var lon = data.coord.lon;
 
         let uvURL =
-          "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" +  lat + "&lon=" + lon;
+          "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" +  lat + "&lon=" + lon;
 
         $.ajax({
           url: uvURL,
