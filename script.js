@@ -49,8 +49,18 @@ searchBtn.on("click", function weatherData() {
           method: "GET",
         }).then(function (data) {
             console.log(data);
-          var uvEl = "UV Index: " + data.value;
-          $("#uvIndex").text(uvEl);
+            var uvEl = "UV Index: " + data.value;
+            if (data.value >=3 && data.value<=5) {
+                $("#uvIndex").addClass("yellow")    
+            }
+            else if (data.value < 3) {
+                $("#uvIndex").addClass("green")    
+            }
+            else if (data.value > 5) {
+                $("#uvIndex").addClass("red")    
+            }
+
+            $("#uvIndex").text(uvEl);
         });
       }
       getUV();
@@ -77,13 +87,38 @@ searchBtn.on("click", function weatherData() {
         }
         storeCity();
         showHistory()     
-
-        console.log(storedCities);
-    });
+        // console.log(storedCities);
+   
       
-      // function showSearch() {
-  } else {alert("Please input a city name");
+    // forecastEl = $("forecast-list"); 
+
+    //   function renderForecast() {
+        
+    //     let forecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ cityName + "&cnt=" + country + "&appid=" +apiKey
+
+    //     $.ajax({
+    //         url: forecastURL,
+    //         method: "GET",
+    //     }).then(function (data) {
+    //         console.log(data);
+            
+    // } )
+    // }
+
+    //     renderForecast();
+    });
+  } else { 
+
+          alert("Please input a city name");
     }
+
+
+
+
+
+
+
+
     //var listBtn = $(".list-button");
     //listBtn.on("click", function () {
      //   weatherData(.value)
