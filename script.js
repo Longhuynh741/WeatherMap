@@ -65,11 +65,15 @@ searchBtn.on("click", function weatherData() {
         }).then(function (data) {
           console.log(data);
           var uvEl = "UV Index: " + data.value;
+
           if (data.value >= 3 && data.value <= 5) {
+            $("#uvIndex").removeClass();
             $("#uvIndex").addClass("yellow");
           } else if (data.value < 3) {
+            $("#uvIndex").removeClass();
             $("#uvIndex").addClass("green");
           } else if (data.value > 5) {
+            $("#uvIndex").removeClass();
             $("#uvIndex").addClass("red");
           }
 
